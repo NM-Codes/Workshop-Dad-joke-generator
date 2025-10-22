@@ -50,3 +50,13 @@ generateJoke();
 
 // 3. Klickevent för jokeBtn - funktionen generateJoke körs vid klick
 jokeBtn.addEventListener('click',generateJoke);
+
+// 4. Funktion som hämtar ett skämt
+function generateJoke(){
+// 4.2 Inställningar för förfrågan till servern
+const config = {
+    Headers: {
+        accept: "application/json"
+    
+}
+}};
