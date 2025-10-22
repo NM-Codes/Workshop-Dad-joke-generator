@@ -44,3 +44,9 @@
 // 1. Hämta element från HTML
 const jokeElement = document.getElementById('joke');
 const jokeBtn = document.getElementById('jokeBtn');
+
+// 2. Ropa på Funktionen
+generateJoke();
+
+// 3. Klickevent för jokeBtn - funktionen generateJoke körs vid klick
+jokeBtn.addEventListener('click',generateJoke);
