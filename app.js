@@ -25,3 +25,5 @@
 // 1. Hämta element:
 // jokeElement 
 // jokeBtn
+
+// 2. Ropa funktionen generateJoke()
