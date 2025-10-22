@@ -7,23 +7,23 @@
 
 // function generateJoke() {
 //    const config = {
-    // Headers: {
-        // Accept: 'application/json', 
-    // },
-    // }
+// Headers: {
+// Accept: 'application/json',
+// },
+// }
 // };
 
 // fetch('https://icanhazdadjoke.com', config)
 // .then((res => res.json()))
 // .then((data =>{
-    // jokeElement-innerHTML = data.joke;
+// jokeElement-innerHTML = data.joke;
 // }))
 
 // jokeBtn.addEventListener('click', generateJoke);
 
 // Pseudokod
 // 1. Hämta element:
-// jokeElement 
+// jokeElement
 // jokeBtn
 
 // 2. Ropa funktionen generateJoke()
@@ -33,7 +33,7 @@
 // 4. Funktion generateJoke():
 // 4.2 gör en inställning - säg till servern: vill ha svar i json-format
 // 4.3 Hämta ett skämt från adressen http:icanhazdadjoke.com
-// 4.4 Om det har gått bra 
+// 4.4 Om det har gått bra
 // gör om svaret till vanlig text
 // skriv skämtet i jokeElement
 // 4.5 Om det har blivit fel
@@ -42,21 +42,38 @@
 
 // Koden
 // 1. Hämta element från HTML
-const jokeElement = document.getElementById('joke');
-const jokeBtn = document.getElementById('jokeBtn');
+const jokeElement = document.getElementById("joke");
+const jokeBtn = document.getElementById("jokeBtn");
 
 // 2. Ropa på Funktionen
 generateJoke();
 
 // 3. Klickevent för jokeBtn - funktionen generateJoke körs vid klick
-jokeBtn.addEventListener('click',generateJoke);
+jokeBtn.addEventListener("click", generateJoke);
 
 // 4. Funktion som hämtar ett skämt
-function generateJoke(){
-// 4.2 Inställningar för förfrågan till servern
-const config = {
-    Headers: {
-        accept: "application/json"
-    
+function generateJoke() {
+  // 4.2 Inställningar för förfrågan till servern
+  const config = {
+    headers: {
+      Accept: "application/json",
+    },
+  };
 }
-}};
+
+// 4.3 Hämta skämt från adress
+fetch("https://icanhazdadjoke.com", config)
+  .then(function (response) {
+    // 4.4 Om det fungerar, svar i text
+    return response.json();
+  })
+  .then(function (data) {
+    // 4.4 Sätter skämtet i HTML
+    jokeElement.innerHTML = data.joke;
+  })
+
+  .catch(function (error) {
+    // 4.5 Om det blir fel - visa felmeddelande
+    jokeElement.innerHTML = "Oops! Inget skämt just nu...";
+    console.log("Fel:", error);
+  });
