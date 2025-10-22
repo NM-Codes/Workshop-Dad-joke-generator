@@ -40,3 +40,7 @@
 // skriv "Oops! Inget skämt..." i jokeElement
 // skriv felet i konsolen så att man kan felsöka det om så behövs.
 
+// Koden
+// 1. Hämta element från HTML
+const jokeElement = document.getElementById('joke');
+const jokeBtn = document.getElementById('jokeBtn');
