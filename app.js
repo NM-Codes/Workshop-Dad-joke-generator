@@ -22,3 +22,6 @@
 // jokeBtn.addEventListener('click', generateJoke);
 
 // Pseudokod
+// 1. Hämta element:
+// jokeElement 
+// jokeBtn
