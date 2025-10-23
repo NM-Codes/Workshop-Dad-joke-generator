@@ -68,7 +68,7 @@ fetch("https://icanhazdadjoke.com", config)
     return response.json();
   })
   .then(function (data) {
-    // 4.4 Sätter skämtet i HTML
+    // 4.4 Visa skämtet     
     jokeElement.innerHTML = data.joke;
   })
 
